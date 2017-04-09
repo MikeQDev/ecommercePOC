@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swiper Playground</title>
+    <link rel="stylesheet" href="../build/css/swiper.css">
+    <meta name="viewport" content="width=device-width height=device-height">
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-scrollbar"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-wrapper">
+<div class="swiper-slide">
+<h1>Select an electronic</h1>
+<p class="swiper-text-next">Cell phones</p>
+<p class="swiper-text-next">TVs</p>
+<p class="swiper-text-next">Computers</p>
+<p class="swiper-text-next">Others</p>
+</div>
+
+<div class="swiper-slide">
+<h1>Select a brand</h1>
+<p class="swiper-text-next">LG</p>
+<p class="swiper-text-next">Samsung</p>
+<p class="swiper-text-next">Apple</p>
+<p class="swiper-text-next">???</p>
+</div>
+
+<div class="swiper-slide">
+<h1>Select a make & model</h1>
+<p class="swiper-text-next">LG</p>
+<select>Make:
+  <option value="">iPhone</option>
+  <option value="">Galaxy</option>
+  <option value=""><i/option>
+  <option value=""></option>
+</select>
+<select>Model:
+  <option value="">5</option>
+  <option value="">6</option>
+  <option value="">6S</option>
+  <option value="">7</option>
+</select>
+</div>
+
+<div class="swiper-slide">
+<h1>View your prices</h1>
+<table>
+  <tr>
+    <th>Condition</th>
+    <th>We'll buy for</th>
+    <th>We'll sell for</th>
+  </tr>
+  <tr>
+    <td>Excellent</td>
+    <td class="swiper-text-next">200</td>
+    <td class="swiper-text-next">250</td>
+  </tr>
+  <tr>
+    <td>Very Good</td>
+    <td class="swiper-text-next">175</td>
+    <td class="swiper-text-next">225</td>
+  </tr>
+  <tr>
+    <td>Good</td>
+    <td class="swiper-text-next">150</td>
+    <td class="swiper-text-next">200</td>
+  </tr>
+  <tr>
+    <td>Fair</td>
+    <td class="swiper-text-next">45</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Bad</td>
+    <td class="swiper-text-next">35</td>
+    <td></td>
+  </tr>
+
+</table>
+</div>
+
+<div class="swiper-slide">
+<h1>How would you like to exchange this product?</h1>
+Your zip code: <input type="text" size="7" id="zipId"></input><button id="updateZip" onClick="updateZip()">Update</button>
+<h3>In store</h3>
+<p id="inStore"></p>
+<script>
+function updateZip(){
+  document.getElementById('inStore').innerHTML = "No stores near: "+document.getElementById('zipId').value;
+  if(document.getElementById('zipId').value=="06226"){
+    printDropboxMap();
+  }else{
+    noDropbox();
+  }
+}
+
+function noDropbox(){
+  document.getElementById('dropboxDiv').innerHTML = "No dropboxes near: "+document.getElementById('zipId').value;
+}
+function printDropboxMap(){
+  document.getElementById('dropboxDiv').innerHTML = 'Dropbox located at 83 Windham St. Student Center<br/>'+'<iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=41.7220406, -72.2185083&amp;t=m&amp;z=15&amp;output=embed"></iframe>'
+}
+
+
+</script>
+<h3>Local dropbox</h3>
+<div id="dropboxDiv"></divv>
+<h3>Mail</h3>
+</div>
+
+
+            <div class="swiper-slide">E</div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <style>
+    body, html {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        height: 100%;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 800px;
+        margin: 50px auto;
+    }
+    .swiper-slide {
+        background: #f1f1f1;
+        color:#000;
+        text-align: center;
+#        line-height: 300px;
+    }
+    </style>
+    <script src="../build/js/swiper.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 50,
+            slidesPerView: 2,
+            centeredSlides: true,
+            slideToClickedSlide: true,
+            grabCursor: true,
+            nextButton: '.swiper-button-next',
+            nextButton: '.swiper-text-next',
+            prevButton: '.swiper-button-prev',
+            scrollbar: '.swiper-scrollbar',
+            pagination: '.swiper-pagination',
+        });
+    </script>
+</body>
+</html>
