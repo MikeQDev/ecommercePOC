@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Swiper Playground</title>
+    <title>Ecycling - Buy & Sell used electronics</title>
     <link rel="stylesheet" href="../build/css/swiper.css">
-    <meta name="viewport" content="width=device-width height=device-height">
+    <meta name="viewport" content="width=device-width">
 <meta name="description" content="Ecycling is a service that will guarantee a great price for used electronics and distribution of technology to lower income areas.">
 </head>
 <body>
@@ -22,33 +22,39 @@
 </div>
 
 <div class="swiper-slide">
-<h1>Select a brand</h1>
-<p class="swiper-text-next">LG</p>
-<p class="swiper-text-next">Samsung</p>
-<p class="swiper-text-next">Apple</p>
-<p class="swiper-text-next">???</p>
-</div>
+<h1>Select a product</h1>
+<img id="lg" src="img/lg-logo.jpg" height="50" width="75" onclick="mark(this)"></img><br/>
+<img id="samsung" src="img/samsung-logo.png" height="50" width="125" onclick="mark(this)"></img><br/>
+<img id ="apple" src="img/apple.jpg" height="50" width="50" onclick="mark(this)"></img><br/>
 
-<div class="swiper-slide">
-<h1>Select a make & model</h1>
-<p class="swiper-text-next">LG</p>
+<h3>Make & model</h3>
 <select>Make:
-  <option value="">iPhone</option>
-  <option value="">Galaxy</option>
-  <option value=""><i/option>
   <option value=""></option>
+  <option value="">Galaxy</option>
+  <option value="">Galaxy Tab</option>
+  <option value="">Galaxy Note</option>
 </select>
 <select>Model:
-  <option value="">5</option>
-  <option value="">6</option>
-  <option value="">6S</option>
-  <option value="">7</option>
+  <option value=""></option>
+  <option value="">S3</option>
+  <option value="">S4</option>
+  <option value="">S5</option>
+  <option value="">S6</option>
 </select>
 </div>
+<script>
+function mark(el) {
+    document.getElementById("lg").style.border = "0px solid blue";
+    document.getElementById("samsung").style.border = "0px solid blue";
+    document.getElementById("apple").style.border = "0px solid blue";
+    el.style.border = "3px solid blue";
+}
+</script>
 
 <div class="swiper-slide">
 <h1>View your prices</h1>
-<table>
+<center>
+<table cellspacing="15" align="center">
   <tr>
     <th>Condition</th>
     <th>We'll buy for</th>
@@ -56,31 +62,32 @@
   </tr>
   <tr>
     <td>Excellent</td>
-    <td class="swiper-text-next">200</td>
-    <td class="swiper-text-next">250</td>
+    <td align="center">200</td>
+    <td align="center">250</td>
   </tr>
   <tr>
     <td>Very Good</td>
-    <td class="swiper-text-next">175</td>
-    <td class="swiper-text-next">225</td>
+    <td align="center">175</td>
+    <td align="center">225</td>
   </tr>
   <tr>
     <td>Good</td>
-    <td class="swiper-text-next">150</td>
-    <td class="swiper-text-next">200</td>
+    <td align="center">150</td>
+    <td align="center">200</td>
   </tr>
   <tr>
     <td>Fair</td>
-    <td class="swiper-text-next">45</td>
+    <td align="center">45</td>
     <td></td>
   </tr>
   <tr>
     <td>Bad</td>
-    <td class="swiper-text-next">35</td>
+    <td align="center">35</td>
     <td></td>
   </tr>
 
 </table>
+</center>
 </div>
 
 <div class="swiper-slide">
@@ -107,13 +114,25 @@ function printDropboxMap(){
 
 
 </script>
-<h3>Local dropbox</h3>
-<div id="dropboxDiv"></divv>
+<h3 class="swiper-text-next">Local dropbox</h3>
+<div id="dropboxDiv"></div>
 <h3>Mail</h3>
 </div>
 
 
-            <div class="swiper-slide">E</div>
+<div class="swiper-slide">
+<h1>Complete your transaction</h1>
+<div id="transactionStatus">
+<p>You are selling your <b>GOOD-CONDITION SAMSUNG GALAXY S6</b> at Dropbox #44 located in the Student Center at 83 Windham Street for <b>$150.00</b><p>
+<button onClick="completeTransaction()" id="completeTransactionButton">Complete transaction</button>
+</div>
+</div>
+
+<script>
+function completeTransaction(){
+document.getElementById("transactionStatus").innerHTML = '<p>You have scheduled to drop off your GOOD-CONDITION SAMSUNG GALAXY S6 at Dropbox #44 located in the Student Center at 83 Windham Street. When dropping your item off, please use transaction ID <b>#3384242</b>. You will receive a check for <b>$150.00</b> by mail in 4-6 weeks if item is deemed to be in specific condition.</p><img src="img/barcode.png"></img><br/><p>Questions about your transaction? <a href="#">Contact us</a></p><br/><br/><p>Thank you for helping keep landfills clean of electronics. We appreciate your business!</p>'
+}
+</script>
         <div class="swiper-pagination"></div>
     </div>
     <style>
