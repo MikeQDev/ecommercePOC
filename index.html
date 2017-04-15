@@ -42,14 +42,6 @@
   <option value="">S6</option>
 </select>
 </div>
-<script>
-function mark(el) {
-    document.getElementById("lg").style.border = "0px solid blue";
-    document.getElementById("samsung").style.border = "0px solid blue";
-    document.getElementById("apple").style.border = "0px solid blue";
-    el.style.border = "3px solid blue";
-}
-</script>
 
 <div class="swiper-slide">
 <h1>View your prices</h1>
@@ -62,32 +54,33 @@ function mark(el) {
   </tr>
   <tr>
     <td>Excellent</td>
-    <td align="center">200</td>
-    <td align="center">250</td>
+    <td align="center" class="swiper-text-next">200</td>
+    <td align="center" class="swiper-text-next">250</td>
   </tr>
   <tr>
     <td>Very Good</td>
-    <td align="center">175</td>
-    <td align="center">225</td>
+    <td align="center" class="swiper-text-next">175</td>
+    <td align="center" class="swiper-text-next">225</td>
   </tr>
   <tr>
     <td>Good</td>
-    <td align="center">150</td>
-    <td align="center">200</td>
+    <td align="center" class="swiper-text-next">150</td>
+    <td align="center" class="swiper-text-next">200</td>
   </tr>
   <tr>
     <td>Fair</td>
-    <td align="center">45</td>
+    <td align="center" class="swiper-text-next">45</td>
     <td></td>
   </tr>
   <tr>
     <td>Bad</td>
-    <td align="center">35</td>
+    <td align="center" class="swiper-text-next">35</td>
     <td></td>
   </tr>
 
 </table>
 </center>
+
 </div>
 
 <div class="swiper-slide">
@@ -96,6 +89,14 @@ Your zip code: <input type="text" size="7" id="zipId"></input><button id="update
 <h3>In store</h3>
 <p id="inStore"></p>
 <script>
+
+function mark(el) {
+    document.getElementById("lg").style.border = "0px solid blue";
+    document.getElementById("samsung").style.border = "0px solid blue";
+    document.getElementById("apple").style.border = "0px solid blue";
+    el.style.border = "3px solid blue";
+}
+
 function updateZip(){
   document.getElementById('inStore').innerHTML = "No stores near: "+document.getElementById('zipId').value;
   if(document.getElementById('zipId').value=="06226"){
